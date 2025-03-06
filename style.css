@@ -1,0 +1,186 @@
+/*
+Theme Name: IX Hostage House
+Theme URI: https://example.com/
+Author: Kristopher Wilkins
+Author URI: https://example.com/
+Description: A custom WordPress theme for IX Hostage House.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: ix-hostage-house
+*/
+
+/* Your existing CSS comes here */
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.cover-photo {
+    background-image: url('<?php echo get_template_directory_uri(); ?>/images/BannerIXHH-2.png');
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    color: white;
+    text-align: center;
+    padding: 0;
+    height: 10vh;                  /* Increased height for better proportions */
+    position: relative;
+}
+
+.cover-photo h1 {
+    color: white; /* White text color */
+    text-shadow: 
+        -1px -1px 0 black,  /* Top-left outline */
+         1px -1px 0 black,  /* Top-right outline */
+        -1px  1px 0 black,  /* Bottom-left outline */
+         1px  1px 0 black;  /* Bottom-right outline */
+    font-family: 'Arial', sans-serif; /* Modern and readable font */
+    font-size: 2.5rem; /* Default font size for desktop */
+    margin: 0;
+    position: absolute;              /* Enables precise positioning */
+    top: 50%;                        /* Centers vertically */
+    left: 50%;                       /* Centers horizontally */
+    transform: translate(-50%, -50%); /* Adjust for perfect centering */
+    white-space: nowrap;             /* Prevents the text from wrapping */
+    width: 100%;                     /* Makes the text span the full div width */
+    text-align: center;              /* Ensures text is centered within the div */
+    overflow: hidden;                /* Hides anything that exceeds the div */
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    background: #333;
+    text-align: center;
+    padding: 10px;
+}
+
+.dropdown-btn {
+    background: #444;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.dropdown-btn:hover {
+    background: #555; /* Change background on hover */
+}
+
+.dropdown-content {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%; /* Dropdown appears below the button */
+    left: 50%;
+    transform: translateX(-50%);
+    background: #444;
+    border-radius: 4px;
+    padding: 10px 0;
+    z-index: 1000; /* Ensure it appears above other content */
+    width: fit-content;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-content a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px 20px;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background: #555; /* Highlight link on hover */
+}
+
+.dropdown-content.show {
+    display: block; /* Show dropdown menu when active */
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 5px 10px;             /* Reduced margin for smaller screens */
+}
+
+/* Mission Section */
+.mission-statement {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;                /* Reduced padding for smaller screens */
+    border: 3px solid #aba000;
+    background-color: #fff799;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mission-statement .text, .mission-statement .photo {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+}
+
+.mission-statement .photo img {
+    max-width: 50%;
+    max-height: 50%;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .mission-statement {
+        flex-direction: column;   /* Stack text and photo vertically */
+    }
+    
+    .mission-statement .photo {
+        order: -1;                /* Move the photo above the text */
+        max-height: 75%;
+        max-width: 75%;
+    }
+    
+    body {
+        font-size: 14px;         /* Smaller font size for readability on mobile */
+    }
+    
+    h1, h2 {
+        font-size: 1.5rem;       /* Adjust headings for small screens */
+    }
+    
+    .coming-soon {
+        padding: 10px;
+        margin: 10px;
+    }
+    
+    .navbar a {
+        margin: 10px 0;          /* Add spacing between links */
+    }
+    
+    .cover-photo h1 {
+        font-size: 1.5rem;          /* Scale down the font size for smaller screens */
+    }
+}
+
+
+.coming-soon {
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    border: 3px solid #ff0000;
+    background-color: #f69679;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Consistent shadow */
+}
+
+/* Content Wrapper */
+.content-wrapper {
+    max-width: 1280px;       /* Constrain content width to 1080px */
+    margin: 0 auto;          /* Center content within the viewport */
+    padding: 0 10px;         /* Add padding for spacing on smaller screens */
+}

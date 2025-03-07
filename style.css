@@ -363,7 +363,7 @@ body {
         left: 0;
         height: 15px; /* Match the scaled-down border size */
         background-size: contain;
-        transform: translateY(50%); /* Align with parchment background */
+        /*transform: translateY(50%); /* Align with parchment background */
     }
 
     /* Section Padding and Text */
